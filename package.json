@@ -1,0 +1,19 @@
+{
+  "name": "wordpress_playground",
+  "version": "1.0.0",
+  "description": "Wordpress Playground",
+  "main": "html/index.php",
+  "scripts": {
+    "build-docker": "node scripts/build-image.js",
+    "build-docker:standalone": "docker build --no-cache -t wordpress_playground .",
+    "run:up": "docker-compose up -d",
+    "run:down": "docker-compose down -v",
+    "download-wordpress": "node scripts/download-wordpress.js",
+    "download-wordpress:win": "powershell -ExecutionPolicy Bypass -File scripts/download-wordpress.ps1",
+    "download-wordpress:unix": "./scripts/download-wordpress.sh"
+  },
+  "private": true,
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
